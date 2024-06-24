@@ -3,7 +3,7 @@
 Summary: ECPG - Embedded SQL in C
 Name: libecpg
 Version: %majorversion.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 
 License: PostgreSQL
 Url: http://www.postgresql.org/
@@ -132,6 +132,9 @@ find_lang_bins %name-devel.lst  ecpg
 
 
 %changelog
+* Mon Jun 24 2024 Troy Dawson <tdawson@redhat.com> - 16.1-3
+- Bump release for June 2024 mass rebuild
+
 * Thu Jan 25 2024 Fedora Release Engineering <releng@fedoraproject.org> - 16.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
 
