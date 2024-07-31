@@ -1,0 +1,48 @@
+---
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  annotations:
+    build.appstudio.openshift.io/repo: '{{ source_url }}/-/tree/{{ revision }}'
+    build.appstudio.redhat.com/commit_sha: '{{ revision }}'
+    build.appstudio.redhat.com/target_branch: '{{ target_branch }}'
+    pipelinesascode.tekton.dev/max-keep-runs: "3"
+    pipelinesascode.tekton.dev/on-cel-expression: event == "push"
+  creationTimestamp: null
+  labels:
+    appstudio.openshift.io/application: rpms
+    appstudio.openshift.io/component: libecpg
+    pipelines.appstudio.openshift.io/type: build
+  name: libecpg-on-push
+  namespace: rhel-on-konflux-tenant
+spec:
+  params:
+    - name: package-name
+      value: libecpg
+    - name: git-url
+      value: "{{ source_url }}"
+    - name: revision
+      value: "{{ revision }}"
+    - name: target-branch
+      value: "{{ target_branch }}"
+  pipelineRef:
+    resolver: git
+    params:
+      - name: url
+        value: "https://gitlab.cee.redhat.com/rhel-on-konflux/rpmbuild-pipeline.git"
+      - name: revision
+        value: main
+      - name: pathInRepo
+        value: pipeline/build-rhel-package.yaml
+  workspaces:
+    - name: workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+    - name: git-auth
+      secret:
+        secretName: '{{ git_auth_secret }}'
