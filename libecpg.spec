@@ -3,7 +3,7 @@
 Summary: ECPG - Embedded SQL in C
 Name: libecpg
 Version: %majorversion.1
-Release: 6%{?dist}
+Release: 7%{?dist}
 
 License: PostgreSQL
 Url: http://www.postgresql.org/
@@ -132,6 +132,9 @@ find_lang_bins %name-devel.lst  ecpg
 
 
 %changelog
+* Wed Nov 13 2024 Aviv Sabadra <asabadra@redhat.com> - 16.1-7
+- Bump release for building in Konflux
+
 * Tue Oct 29 2024 Troy Dawson <tdawson@redhat.com> - 16.1-6
 - Bump release for October 2024 mass rebuild:
   Resolves: RHEL-64018
