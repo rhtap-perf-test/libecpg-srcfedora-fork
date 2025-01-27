@@ -133,7 +133,7 @@ find_lang_bins %name-devel.lst  ecpg
 
 %changelog
 * Mon Jan 27 2025 Aviv Sabadra <asabadra@redhat.com> - 16.1-11
-- Bump release for final Konflux build 
+- Bump release for final January Konflux build 
 
 * Wed Nov 20 2024 Aviv Sabadra <asabadra@redhat.com> - 16.1-10
 - Bump release for Konflux
