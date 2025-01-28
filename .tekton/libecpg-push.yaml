@@ -35,14 +35,6 @@ spec:
       - name: pathInRepo
         value: pipeline/build-rhel-package.yaml
   workspaces:
-    - name: workspace
-      volumeClaimTemplate:
-        spec:
-          accessModes:
-            - ReadWriteOnce
-          resources:
-            requests:
-              storage: 10Gi
     - name: git-auth
       secret:
         secretName: '{{ git_auth_secret }}'
