@@ -3,7 +3,7 @@
 Summary: ECPG - Embedded SQL in C
 Name: libecpg
 Version: %majorversion.1
-Release: 12%{?dist}
+Release: 13%{?dist}
 
 License: PostgreSQL
 Url: http://www.postgresql.org/
@@ -132,6 +132,9 @@ find_lang_bins %name-devel.lst  ecpg
 
 
 %changelog
+* Fri Feb 07 2025 Michal Srb <michal@redhat.com> - 16.1-13
+- Test draft builds with composes
+
 * Tue Jan 28 2025 Aviv Sabadra <asabadra@redhat.com> - 16.1-12
 - Drop unnecessary PVC
 
