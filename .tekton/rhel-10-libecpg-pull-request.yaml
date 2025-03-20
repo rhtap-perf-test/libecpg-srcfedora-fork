@@ -11,7 +11,7 @@ metadata:
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: rhel-10-workload-db-postgresql-libs
+    appstudio.openshift.io/application: rhel-10
     appstudio.openshift.io/component: rhel-10-libecpg
     pipelines.appstudio.openshift.io/type: build
   name: rhel-10-libecpg-on-pull-request
@@ -19,7 +19,7 @@ metadata:
 spec:
   params:
     - name: application
-      value: rhel-10-workload-db-postgresql-libs
+      value: rhel-10
     - name: package-name
       value: libecpg
     - name: git-url
