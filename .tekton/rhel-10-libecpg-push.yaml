@@ -17,8 +17,6 @@ metadata:
   namespace: rhel-sst-cs-database-tenant
 spec:
   params:
-    - name: application
-      value: rhel-10
     - name: package-name
       value: libecpg
     - name: git-url
@@ -27,6 +25,8 @@ spec:
       value: "{{ revision }}"
     - name: target-branch
       value: "{{ target_branch }}"
+    - name: ociStorage
+      value: quay.io/redhat-user-workloads/rhel-sst-cs-database-tenant/rhel-10/libecpg:{{ revision }}
   pipelineRef:
     resolver: git
     params:
