@@ -1,8 +1,1 @@
-summary: Tier tests
-discover:
-    how: fmf
-    repository: https://src.fedoraproject.org/tests/postgresql.git
-    ref: main
-    filter: 'tag:libecpg'
-execute:
-    how: tmt
+resultsdb-testcase: separate
